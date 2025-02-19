@@ -9,7 +9,8 @@ import org.junit.runner.RunWith;
         features = {"src/test/Features/Test.feature"},
         glue = {"stepDef","hooks"},
         tags = "@Login",
-        monochrome = true
+        monochrome = true,
+        plugin = {"pretty","html:target/HtmlReports/report.html"}
 )
 
 public class CucumberRunner{
