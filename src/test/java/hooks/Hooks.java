@@ -7,7 +7,6 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
-import stepDef.saucedemoPage;
 
 public class Hooks {
 
@@ -16,13 +15,14 @@ public class Hooks {
 
     @Before
     public void setUp(){
-        logger = LogManager.getLogger(saucedemoPage.class);
+        logger = LogManager.getLogger(Hooks.class);
         System.setProperty("webdriver.edge.driver","src/test/resources/msedgedriver.exe");
         EdgeOptions options = new EdgeOptions();
         options.addArguments("remote-allow-origins=*");
         logger.info("Initializing Webdriver");
         driver =new EdgeDriver(options);
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(30,java.util.concurrent.TimeUnit.SECONDS);
     }
 
     @After
