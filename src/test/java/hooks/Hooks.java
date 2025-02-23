@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 
+import java.time.Duration;
+
 public class Hooks {
 
     public static WebDriver driver;
@@ -22,7 +24,7 @@ public class Hooks {
         logger.info("Initializing Webdriver");
         driver =new EdgeDriver(options);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30,java.util.concurrent.TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 
     @After

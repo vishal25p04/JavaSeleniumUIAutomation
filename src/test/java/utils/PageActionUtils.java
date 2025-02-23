@@ -6,6 +6,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Base64;
+import java.util.Properties;
+
 public class PageActionUtils {
     private final WebDriver driver;
     private final Logger logger;
@@ -42,4 +48,26 @@ public class PageActionUtils {
         Assert.assertEquals(expectedText,actualText);
         logger.info("Element text validated successfully");
     }
+
+    public String getKeyFromPropertyConfigReader(String key){
+        try{
+            Properties properties = new Properties();
+            String filePath = "src/test/resources/Config.properties";
+            FileInputStream fis = new FileInputStream(filePath);
+            properties.load(fis);
+            return properties.getProperty(key);
+        }
+        catch(IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public String getDecryptedValue(String key){
+        String encryptedValue =  getKeyFromPropertyConfigReader(key);
+        byte[] decryptedByte=  Base64.getDecoder().decode(encryptedValue);
+        return new String(decryptedByte);
+    }
+
+
 }
