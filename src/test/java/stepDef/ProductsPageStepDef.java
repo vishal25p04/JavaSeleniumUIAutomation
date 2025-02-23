@@ -14,9 +14,9 @@ public class ProductsPageStepDef {
         this.logger=Hooks.logger;
     }
 
-    @Then("User enters the home page")
-    public void user_enters_the_home_page() {
-        logger.info("Validating HomePage");
+    @Then("User enters the Product page")
+    public void user_enters_the_product_page() {
+        logger.info("Validating ProductPage");
         ProductsPage productsPage = new ProductsPage();
         productsPage.openProductsPage();
     }
