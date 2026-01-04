@@ -5,7 +5,6 @@ import hooks.Hooks;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.apache.logging.log4j.Logger;
-import org.testng.Assert;
 import page.LoginPage;
 
 public class LoginPageStepDef {
