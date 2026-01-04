@@ -16,7 +16,7 @@ import org.testng.annotations.DataProvider;
         plugin = {"pretty","html:target/HtmlReports/report.html","json:target/cucumber.json" }
 )
 
-public class CucumberRunner
+public class TestRunner
         //extends AbstractTestNGCucumberTests
 {
 
