@@ -41,7 +41,7 @@ Scenario: User logins to Saucedemo and validate homePage
       | Sauce Labs Onesie               | cdef      | ghij     | 77889      |
       | Test.allTheThings() T-Shirt (Red) | klmn     | opqr     | 99001     |
 
-  @ExcelDataDriven @AddToCartAndValidateExcel @ScenarioId=TC_01_SLBP
+  @ExcelDataDriven @AddToCartAndValidateExcel @ScenarioId=TC_01_SLBP @test
     Scenario: User adds item1 to cart and validates them inside Cart Page using Excel DataDriven
       When User login to the page
       Then User enters the Product page
