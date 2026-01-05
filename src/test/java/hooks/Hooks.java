@@ -36,7 +36,7 @@ public class Hooks extends PageActionUtils {
         DriverFactory.setDriver(driver);
 
         DriverFactory.getDriver().manage().window().maximize();
-        DriverFactory.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        DriverFactory.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
     @Before(order=1)
