@@ -13,7 +13,8 @@ import org.testng.annotations.DataProvider;
         glue = {"stepDef","hooks"},
         tags = "@ExcelDataDriven",
         monochrome = true,
-        plugin = {"pretty","html:target/HtmlReports/report.html","json:target/cucumber.json" }
+        plugin = {"pretty","html:target/HtmlReports/report.html","json:target/cucumber.json",
+                "rerun:target/rerun.txt"}
 )
 
 public class TestRunner
