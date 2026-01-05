@@ -11,7 +11,7 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions(
         features = {"src/test/Features/Test.feature"},
         glue = {"stepDef","hooks"},
-        tags = "@ExcelDataDriven",
+        tags = "@test",
         monochrome = true,
         plugin = {"pretty","html:target/HtmlReports/report.html","json:target/cucumber.json",
                 "rerun:target/rerun.txt"}
